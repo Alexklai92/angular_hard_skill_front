@@ -1,0 +1,81 @@
+.container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
+    .skills {
+        max-width: 50%;
+        display: flex;
+        align-items: center;
+        padding: 10px 20px;
+        box-sizing: border-box;
+    }
+
+    .skill {
+        padding: 10px;
+        border: 1px solid rgb(201, 89, 105);
+        text-align: left;
+        margin-right: 25px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        h2 {
+            font-size: 18px;
+            text-transform: capitalize;
+            margin: 0;
+        }
+
+        .desc::before {
+            content: "Description: ";
+        }
+
+        .created::before {
+            content: "Created: ";
+            font-size: 14px;
+            color: black;
+        }
+
+        .created {
+            font-size: 14px;
+            color: lightgrey;
+        }
+
+        .link {
+            display: block;
+            color: lightblue;
+            padding: 5px;
+            margin-bottom: 5px;
+            margin-top: 5px;
+            border: 1px solid lightgrey;
+            border-radius: 6px;
+        }
+
+        .link.read-only:hover {
+            cursor: not-allowed;
+        }
+
+        .finished {
+            color: lightgreen;
+            font-weight: 600;
+        }
+
+        .finished::before,
+        .not-finished::before {
+            content: "Is finished: ";
+            font-weight: 400;
+            color: black;
+        }
+
+        .not-finished {
+            color: rgb(201, 89, 105);
+            font-weight: 600;
+        }
+
+        .author::before {
+            content: "Author: ";
+        }
+    }
+}

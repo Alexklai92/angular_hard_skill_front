@@ -18,6 +18,16 @@ var HardSkillComponent = /** @class */ (function () {
     HardSkillComponent.prototype.getCreated = function (timestamp) {
         return new Date(timestamp * 1000);
     };
+    HardSkillComponent.prototype.getDescription = function (desc, open, id) {
+        if (open === void 0) { open = false; }
+        if (open) {
+            return desc ? desc : 'Not description';
+        }
+        return desc.slice(0, 20) + '...';
+    };
+    HardSkillComponent.prototype.isComplete = function (finished) {
+        return finished ? "yes" : "no";
+    };
     HardSkillComponent = __decorate([
         core_1.Component({
             selector: 'app-hard-skill',

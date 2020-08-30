@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SkillService } from 'src/app/skill.service';
+import { observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-hard-skill',
@@ -20,4 +22,14 @@ export class HardSkillComponent implements OnInit {
     return new Date(timestamp * 1000)
   }
 
+  getDescription(desc, open=false, id) {
+    if (open) {
+      return desc ? desc : 'Not description'
+    }
+    return desc.slice(0, 20) + '...'
+  }
+
+  isComplete(finished) {
+    return finished ? `yes` : `no`
+  }
 }
