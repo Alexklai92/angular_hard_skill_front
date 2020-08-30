@@ -1,0 +1,25 @@
+<div class="container">
+    <h1>Road to middle</h1>
+
+    <div class="skills">
+        <div *ngIf="skills$ | async as skills" class="flex-around">
+            <div *ngFor="let skill of skills">
+                <div class="skill">
+                    <h2>{{ skill.title }}</h2>
+                </div>
+                <div class="desc">{{ skill.description }}</div>
+                <div class="created">{{ getCreated(skill.created) }}</div>
+                <div class="approves">
+                    <span class="head">Approve links</span>
+                    <div class="link" *ngIf="skill.link_approve_first"><a href="{{ skill.link_approve_first }}"></a></div>
+                    <div class="link" *ngIf="skill.link_approve_second"><a href="{{ skill.link_approve_second }}"></a></div>
+                </div>
+                <div class="footer">
+                    {{ skill.author }}
+                </div>
+                <a href="/{{ skill.id }}">Open</a>
+
+            </div>
+        </div>
+    </div>
+</div>
