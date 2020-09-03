@@ -29,6 +29,14 @@ export class HardSkillComponent implements OnInit {
     return desc.slice(0, 20) + '...'
   }
 
+  getDesc(id) {
+    for (let i=0;i<this.skills$.length;i++) {
+      if (this.skills$[i].id == id) {
+        console.log(id)
+      }
+    }
+  }
+
   isComplete(finished) {
     return finished ? `yes` : `no`
   }

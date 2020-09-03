@@ -5,21 +5,45 @@
     text-align: center;
 
     .skills {
-        max-width: 50%;
+        max-width: 100%;
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
         padding: 10px 20px;
         box-sizing: border-box;
     }
 
     .skill {
+        min-width: 45%;
         padding: 10px;
-        border: 1px solid rgb(201, 89, 105);
+        border: 1px solid rgb(194, 194, 194);
+        box-shadow: 1px 1px 12px black;
         text-align: left;
         margin-right: 25px;
+        margin-bottom: 25px;
 
         &:last-child {
             margin-right: 0;
+        }
+
+        .title {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .type {
+            color: black;
+            background-color: rgb(243, 242, 241);
+            padding: 2px 5px;
+            font-size: 15px;
+            text-transform: capitalize;
+            box-sizing: border-box;
+            border-radius: 6px;
+        
+            &:hover {
+                opacity: .9;
+                cursor: pointer;
+            }
         }
 
         h2 {
@@ -40,7 +64,7 @@
 
         .created {
             font-size: 14px;
-            color: lightgrey;
+            color: rgb(145, 144, 144);
         }
 
         .link {
@@ -76,6 +100,11 @@
 
         .author::before {
             content: "Author: ";
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
         }
     }
 }
