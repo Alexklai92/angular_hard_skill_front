@@ -22,6 +22,11 @@ export class HardSkillComponent implements OnInit {
     return new Date(timestamp * 1000)
   }
 
+  getLink(link) {
+    let newLink = link.split("/")
+    return newLink[newLink.length - 1]
+  }
+
   getDescription(desc, open=false, id) {
     if (open) {
       return desc ? desc : 'Not description'

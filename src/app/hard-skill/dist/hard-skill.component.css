@@ -1,0 +1,75 @@
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.container .skills {
+  max-width: 50%;
+  display: flex;
+  justify-content: baseline;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+.container .skill {
+  padding: 10px;
+  border: 1px solid #c95969;
+  text-align: left;
+  margin-right: 25px;
+}
+.container .skill:last-child {
+  margin-right: 0;
+}
+.container .skill h2 {
+  font-size: 18px;
+  text-transform: capitalize;
+  margin: 0;
+}
+.container .skill .desc::before {
+  content: "Description: ";
+}
+.container .skill .created::before {
+  content: "Created: ";
+  font-size: 14px;
+  color: black;
+}
+.container .skill .created {
+  font-size: 14px;
+  color: lightgrey;
+}
+.container .skill .link {
+  display: block;
+  color: lightblue;
+  padding: 5px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  border: 1px solid lightgrey;
+  border-radius: 6px;
+}
+.container .skill .link a {
+  text-decoration: none;
+  color: #4c6bd3;
+}
+.container .skill .link a:hover {
+  text-decoration: underline;
+}
+.container .skill .link.read-only:hover {
+  cursor: not-allowed;
+}
+.container .skill .finished {
+  color: lightgreen;
+  font-weight: 600;
+}
+.container .skill .finished::before,
+.container .skill .not-finished::before {
+  content: "Is finished: ";
+  font-weight: 400;
+  color: black;
+}
+.container .skill .not-finished {
+  color: #c95969;
+  font-weight: 600;
+}
+.container .skill .author::before {
+  content: "Author: ";
+}

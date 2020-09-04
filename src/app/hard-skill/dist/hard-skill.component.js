@@ -18,6 +18,10 @@ var HardSkillComponent = /** @class */ (function () {
     HardSkillComponent.prototype.getCreated = function (timestamp) {
         return new Date(timestamp * 1000);
     };
+    HardSkillComponent.prototype.getLink = function (link) {
+        var newLink = link.split("/");
+        return newLink[newLink.length - 1];
+    };
     HardSkillComponent.prototype.getDescription = function (desc, open, id) {
         if (open === void 0) { open = false; }
         if (open) {

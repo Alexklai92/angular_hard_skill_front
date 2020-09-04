@@ -12,7 +12,7 @@
                 <div class="desc" *ngIf="!allDesc" (click)="allDesc = !allDesc">{{ getDescription(skill.description) }}</div>
                 <div class="desc" *ngIf="allDesc" (click)="allDesc = !allDesc">{{ getDescription(skill.description, true) }}</div>
                 <div class="approves">
-                    <div class="link" *ngIf="skill.link_approve_first"><a href="{{ skill.link_approve_first }}">{{ skill.link_approve_first }}</a></div>
+                    <div class="link" *ngIf="skill.link_approve_first"><a href="{{ skill.link_approve_first }}">{{ getLink(skill.link_approve_first) }}</a></div>
                     <div class="link" *ngIf="skill.link_approve_second"><a href="{{ skill.link_approve_second }}">{{ skill.link_approve_first }}</a></div>
                     <div class="link read-only" *ngIf="!skill.link_approve_first">None</div>
                     <div class="link read-only" *ngIf="!skill.link_approve_second">None</div>
