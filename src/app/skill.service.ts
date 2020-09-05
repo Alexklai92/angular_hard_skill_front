@@ -44,4 +44,13 @@ export class SkillService {
   update(skill: Skill): Observable<Skill> {
     return this.http.patch<Skill>(`${environment.apiUrl}/patch`, skill)
   }
+
+  getById(skill_id: number): Observable<Skill> {
+    return this.http.get<Skill>(`${environment.apiUrl}/get-by-id/${skill_id}`)
+      .pipe(map((skill: Skill) => {
+        return {
+          ...skill
+        }
+      }))
+  }
 }

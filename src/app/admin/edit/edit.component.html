@@ -1,0 +1,96 @@
+<div *ngIf="form; else loading" class="container align-left">
+    <form [formGroup]="form" (ngSubmit)="submit()" class="edit-skill">
+
+        <div class="form-control"
+            [ngClass]="{invalid: form.get('title').touched && form.get('title').invalid}"
+            [ngClass]="{valid: !form.get('title').invalid}">
+            <label for="title">Цель:</label>
+            <input id="title" type="text" formControlName="title">
+            <div class="validation"
+                *ngIf="form.get('title').touched && form.get('title').invalid"
+            >
+                <small *ngIf="form.get('title').errors.required">It's field a required</small>
+            </div>
+        </div>
+
+        <div class="form-control"
+            [ngClass]="{invalid: form.get('author').touched && form.get('author').invalid}"
+            [ngClass]="{valid: !form.get('author').invalid}">
+
+            <label for="author">Автор:</label>
+            <input id="author" type="text" formControlName="author">
+            <div class="validation"
+                *ngIf="form.get('author').touched && form.get('author').invalid"
+            >
+                <small *ngIf="form.get('author').errors.required">It's field a required</small>
+            </div>
+        </div>
+
+        <div class="form-control"
+            [ngClass]="{invalid: form.get('finished').touched && form.get('finished').invalid}"
+            [ngClass]="{valid: !form.get('finished').invalid}">
+
+            <label for="finished">Статус цели:</label>
+            <select id="finished" type="checkbox" formControlName="finished">
+                <option [ngValue]="false">Открыта</option>
+                <option [ngValue]="true">Достигнута</option>
+            </select>
+            <div class="validation"
+                *ngIf="form.get('finished').touched && form.get('finished').invalid"
+            >
+                <small *ngIf="form.get('finished').errors.required">It's field a required</small>
+            </div>
+        </div>
+
+        <div class="form-control"
+            [ngClass]="{invalid: form.get('link_approve_first').touched && form.get('link_approve_first').invalid}"
+            [ngClass]="{valid: !form.get('link_approve_first').invalid}">
+
+            <label for="link_approve_first">Ссылка с апрувом (1):</label>
+            <input id="link_approve_first" type="text" formControlName="link_approve_first">
+            <div class="validation"
+                *ngIf="form.get('link_approve_first').touched && form.get('link_approve_first').invalid"
+            >
+                <small *ngIf="form.get('link_approve_first').errors.required">It's field a required</small>
+            </div>
+        </div>
+
+        <div class="form-control"
+            [ngClass]="{invalid: form.get('link_approve_second').touched && form.get('link_approve_second').invalid}"
+            [ngClass]="{valid: !form.get('link_approve_second').invalid}">
+
+            <label for="title">Ссылка с апрувом (2):</label>
+            <input id="link_approve_second" type="text" formControlName="link_approve_second">
+            <div class="validation"
+                *ngIf="form.get('link_approve_second').touched && form.get('link_approve_second').invalid"
+            >
+                <small *ngIf="form.get('link_approve_second').errors.required">It's field a required</small>
+            </div>
+        </div>
+
+        <div class="form-control"
+            [ngClass]="{invalid: form.get('description').touched && form.get('description').invalid}"
+            [ngClass]="{valid: !form.get('description').invalid}">
+
+            <label for="description">Описание цели:</label>
+            <textarea style="display: block; height: 150px;"
+                      id="description"
+                      formControlName="description">
+            </textarea>
+
+            <div class="validation"
+                *ngIf="form.get('description').touched && form.get('description').invalid"
+            >
+                <small *ngIf="form.get('description').errors.required">It's field a required</small>
+            </div>
+        </div>
+
+        <button class="btn btn-primary"
+                type="submit"
+                [disabled]="form.invalid || submitted">Сохранить</button>
+    </form>
+</div>
+
+<ng-template #loading>
+    <p>Идёт загрузка...</p>
+</ng-template>

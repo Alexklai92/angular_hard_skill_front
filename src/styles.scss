@@ -249,3 +249,34 @@ header.navbar {
         }
     }
 }
+
+.align-left {
+    text-align: left;
+}
+
+.form-control {
+    width: 100%;
+    margin-bottom: 10px;
+
+    label {
+        display: block;
+        color: #414141;
+        font-weight: 600;
+    }
+
+    input,
+    textarea {
+        box-sizing: border-box;
+        width: 100%;
+        border: none;
+        border: 2px solid #a7a7a7;
+        padding: 9px;
+        color: #414141;
+        font-size: 18px;
+    }
+
+    input:focus,
+    textarea:focus {
+        border: 2px solid #8486f3;
+    }
+}

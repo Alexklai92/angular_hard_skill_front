@@ -9,6 +9,7 @@ import { CreateComponent } from './create/create.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FilterPipe } from 'src/app/filter.pipe';
 import { SearchPipe } from 'src/app/search.pipe';
+import { EditComponent } from './edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { SearchPipe } from 'src/app/search.pipe';
     CreateComponent,
     DashboardComponent,
     FilterPipe,
-    SearchPipe
+    SearchPipe,
+    EditComponent
   ],
   imports: [
     CommonModule,
@@ -29,7 +31,8 @@ import { SearchPipe } from 'src/app/search.pipe';
           { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
           { path: 'login', component: LoginPageComponent },
           { path: 'create', component: CreateComponent, canActivate: [AuthGuard] },
-          { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] }
+          { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+          { path: 'skill/:id/edit', component: EditComponent, canActivate: [AuthGuard] }
         ]
       }
     ])

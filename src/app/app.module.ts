@@ -8,6 +8,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SkillComponent } from './skill/skill.component';
 import { FormsModule } from '@angular/forms';
 import { AdminModule } from './admin/admin.module';
+import { FormControlComponent } from './form-control/form-control.component';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { AdminModule } from './admin/admin.module';
     AppComponent,
     HardSkillComponent,
     SkillComponent,
+    FormControlComponent,
   ],
   imports: [
     BrowserModule,
