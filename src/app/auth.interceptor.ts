@@ -23,15 +23,20 @@ export class AuthInterceptor implements HttpInterceptor {
         }
 
         return next.handle(req)
-          .pipe(
-              catchError(error => {
-                  if (error.status == 401) {
-                    //   this.auth.logout()
-                    //   this.router.navigate(['/admin', 'login'])
-                    console.log('error 401')
-                  }
-                  return throwError(error)
-              })
-          )
+            .pipe(
+                catchError(error => {
+                    if (error.status == 500) {
+                        console.error("FATAL! API responsed 500 status code")
+                        this.auth.logout()
+                        this.router.navigate(['/'])
+                    }
+                    if (error.status == 401 || error.status == 403) {
+                        this.auth.logout()
+                        this.router.navigate(['/admin', 'login'])
+                        console.log('error 401')
+                    }
+                    return throwError(error)
+                })
+            )
     }
 }

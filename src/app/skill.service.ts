@@ -34,11 +34,14 @@ export class SkillService {
       }))
   }
 
-  remove(skill) {
-    return this.http.delete<Skill>(`${environment.apiUrl}/delete`, skill)
+  remove(skill): Observable<void> {
+    return this.http.delete<void>(`${environment.apiUrl}/delete`, skill)
       .pipe(map(res => {
         console.log('delete res', res)
-        return Object.keys
       }))
+  }
+
+  update(skill: Skill): Observable<Skill> {
+    return this.http.patch<Skill>(`${environment.apiUrl}/patch`, skill)
   }
 }

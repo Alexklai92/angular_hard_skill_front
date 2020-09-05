@@ -19,7 +19,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     RouterModule.forChild([
       {
         path: '', component: AdminLayoutComponent, children: [
-          { path: '', redirectTo: 'login', pathMatch: 'full' },
+          { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
           { path: 'login', component: LoginPageComponent },
           { path: 'create', component: CreateComponent, canActivate: [AuthGuard] },
           { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] }

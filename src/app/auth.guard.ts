@@ -22,7 +22,7 @@ export class AuthGuard implements CanActivate {
     if (this.auth.isAuthenticated()) {
       return true;
     }
-    console.log(1111111)
+    console.log("canActive redirected")
     this.route.navigate(['/admin', 'login'])
   }
 
