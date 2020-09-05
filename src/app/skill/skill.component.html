@@ -1,0 +1,21 @@
+<div class="title">
+    <h2 [ngStyle]="{'text-decoration': skill.finished ? 'line-through' : 'none'}">{{ skill.title }}</h2>
+    <span class="type {{ skill.type }}">{{ skill.type }}</span>
+</div>
+
+<div class="desc" *ngIf="!allDesc" (click)="allDesc = !allDesc">{{ getDescription(skill.description) }}</div>
+<div class="desc" *ngIf="allDesc" (click)="allDesc = !allDesc">{{ getDescription(skill.description, true) }}</div>
+<div class="approves">
+    <div class="link" *ngIf="skill.link_approve_first"><a href="{{ skill.link_approve_first }}">{{ getLink(skill.link_approve_first) }}</a></div>
+    <div class="link" *ngIf="skill.link_approve_second"><a href="{{ skill.link_approve_second }}">{{ skill.link_approve_first }}</a></div>
+    <div class="link read-only" *ngIf="!skill.link_approve_first">None</div>
+    <div class="link read-only" *ngIf="!skill.link_approve_second">None</div>
+   
+<div class="footer">
+    <span class="author">{{ skill.author }}</span> <div [ngClass]="{
+        'finished': skill.finished,
+        'not-finished': !skill.finished
+    }">{{ isComplete(skill.finished) }}</div>
+</div>
+</div>
+<div class="created">{{ getCreated(skill.created) | date:' hh:mm:ss MM-dd-yyyy' }}</div>

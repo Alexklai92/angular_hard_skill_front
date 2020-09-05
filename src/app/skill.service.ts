@@ -19,5 +19,16 @@ export class SkillService {
             ...res[key]
           }))
       }))
-}
+  }
+
+  create(skill) {
+    return this.http.post(`${environment.apiUrl}/post`, skill)
+      .pipe(map(res => {
+        console.log('create res', res)
+        return Object.keys(res)
+          .map(key => ({
+            ...res[key],
+          }))
+      }))
+  }
 }

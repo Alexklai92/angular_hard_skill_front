@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SkillService } from 'src/app/skill.service';
-import { observable } from 'rxjs';
+import { observable, pipe } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Component({
@@ -11,6 +11,8 @@ import { map } from 'rxjs/operators';
 export class HardSkillComponent implements OnInit {
 
   skills$
+  searchStr: string = ''
+  isFinished: string = 'all'
 
   constructor(private skillService: SkillService) { }
 
@@ -18,31 +20,4 @@ export class HardSkillComponent implements OnInit {
     this.skills$ = this.skillService.getAll()
   }
 
-  getCreated(timestamp) {
-    return new Date(timestamp * 1000)
-  }
-
-  getLink(link) {
-    let newLink = link.split("/")
-    return newLink[newLink.length - 1]
-  }
-
-  getDescription(desc, open=false, id) {
-    if (open) {
-      return desc ? desc : 'Not description'
-    }
-    return desc.slice(0, 20) + '...'
-  }
-
-  getDesc(id) {
-    for (let i=0;i<this.skills$.length;i++) {
-      if (this.skills$[i].id == id) {
-        console.log(id)
-      }
-    }
-  }
-
-  isComplete(finished) {
-    return finished ? `yes` : `no`
-  }
 }

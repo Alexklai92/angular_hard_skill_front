@@ -1,32 +1,20 @@
 <div class="container">
     <h1>Road to middle</h1>
+    <div class="search">
+        <input type="text" placeholder="search" [(ngModel)]="searchStr">
+        <!-- <input type="checkbox" [(ngModel)]="isFinished" id="fin"> -->
+        <select name="" id="" [(ngModel)]="isFinished">
+            <option value="yes" selected>Closed</option>
+            <option value="no">Opened</option>
+            <option value="all">All todo</option>
+        </select>
+    </div>
 
     <div class="wrapper">
         <div *ngIf="skills$ | async as skills" class="skills">
-            <div class="skill" *ngFor="let skill of skills">
-                <div class="title">
-                    <h2 [ngStyle]="{'text-decoration': skill.finished ? 'line-through' : 'none'}">{{ skill.title }}</h2>
-                    <span class="type {{ skill.type }}">{{ skill.type }}</span>
-                </div>
-
-                <div class="desc" *ngIf="!allDesc" (click)="allDesc = !allDesc">{{ getDescription(skill.description) }}</div>
-                <div class="desc" *ngIf="allDesc" (click)="allDesc = !allDesc">{{ getDescription(skill.description, true) }}</div>
-                <div class="approves">
-                    <div class="link" *ngIf="skill.link_approve_first"><a href="{{ skill.link_approve_first }}">{{ getLink(skill.link_approve_first) }}</a></div>
-                    <div class="link" *ngIf="skill.link_approve_second"><a href="{{ skill.link_approve_second }}">{{ skill.link_approve_first }}</a></div>
-                    <div class="link read-only" *ngIf="!skill.link_approve_first">None</div>
-                    <div class="link read-only" *ngIf="!skill.link_approve_second">None</div>
-                   
-                <div class="footer">
-                    <span class="author">{{ skill.author }}</span> <div [ngClass]="{
-                        'finished': skill.finished,
-                        'not-finished': !skill.finished
-                    }">{{ isComplete(skill.finished) }}</div>
-                </div>
-                </div>
-                <div class="created">{{ getCreated(skill.created) | date:' hh:mm:ss MM-dd-yyyy' }}</div>
-
-            </div>
+            <app-skill class="skill"
+                       *ngFor="let skill of skills | searchSkill: searchStr | filterSkill: isFinished"
+                       [skill]="skill"></app-skill>
         </div>
     </div>
 </div>

@@ -1,0 +1,45 @@
+<form [formGroup]="form"
+      (ngSubmit)="submit()"
+      class="create-form"
+>
+    <div class="form-control">
+        <label for="title">Title:</label>
+        <input id="title"
+            type="title"
+            formControlName="title"
+        >
+        <div *ngIf="form.get('title').touched && form.get('title').invalid"
+            class="validation">
+            <small *ngIf="form.get('title').errors.required">Writed product title</small>
+        </div>
+    </div>
+
+    <div class="form-control">
+        <label for="author">author:</label>
+        <input id="author"
+            type="author"
+            formControlName="author"
+        >
+        <div *ngIf="form.get('author').touched && form.get('author').invalid"
+            class="validation">
+            <small *ngIf="form.get('author').errors.required">Writed skill author</small>
+        </div>
+    </div>
+
+    <div class="form-control">
+        <label for="type">type:</label>
+        <input id="type"
+            type="type"
+            formControlName="type"
+        >
+        <div *ngIf="form.get('type').touched && form.get('type').invalid"
+            class="validation">
+            <small *ngIf="form.get('type').errors.required">Writed skill type</small>
+        </div>
+    </div>
+
+    <button type="submit"
+    class="btn btn-default"
+    [disabled]="form.invalid || submitted"
+    >Add</button>
+</form>
