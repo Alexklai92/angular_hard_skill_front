@@ -32,7 +32,8 @@
         <div *ngIf="skills$ | async as skills" class="skills">
             <app-skill class="skill"
                        *ngFor="let skill of skills | searchSkill: searchStr | filterSkill: isFinished"
-                       [skill]="skill"></app-skill>
+                       [skill]="skill">
+            </app-skill>
         </div>
     </div>
 </div>

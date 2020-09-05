@@ -1,22 +1,30 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { environment } from '../environments/environment';
-import { tap } from 'rxjs/operators';
-import { FindValueSubscriber } from 'rxjs/internal/operators/find';
+import { tap, catchError } from 'rxjs/operators';
+import { Observable, throwError, Subject } from 'rxjs';
+import { User } from './interfaces';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
+  public error$: Subject<string> = new Subject<string>()
+
   constructor(private http: HttpClient) { }
 
-  login(User) {
-    return this.http.post(`${environment.apiUrl}/get_token`, User)
+  login(user: User): Observable<any> {
+    return this.http.post(`${environment.apiUrl}/get_token`, user)
       .pipe(
-        tap(this.setToken)
+        tap(this.setToken),
+        catchError(this.handleError.bind(this))
       )
   }
+
+  private handleError(error: HttpErrorResponse) {
+    return throwError(error)
+}
 
   private setToken(response) {
     if (!response) {
