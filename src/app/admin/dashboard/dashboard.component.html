@@ -1,1 +1,42 @@
-<p>dashboard works!</p>
+<div *ngIf="skills.length; else loading" class="container">
+    <div class="form-control">
+        <input type="text" placeholder="Найти скилл.." [(ngModel)]="searchStr">
+        <select name="" id="" [(ngModel)]="isFinished">
+            <option value="all">All todo</option>
+            <option value="no">Opened</option>
+            <option value="yes">Closed</option>
+        </select>
+    </div>
+    <table class="dashboard" cellspacing="0">
+        <thead>
+            <tr>
+                <td>#</td>
+                <td>Created</td>
+                <td>Type</td>
+                <td>Status</td>
+                <td>title</td>
+                <td>Action</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let skill of skills | searchSkill: searchStr | filterSkill: isFinished; let idx = index">
+                <td>{{ idx + 1 }}</td>
+                <td>{{ skill.created }}</td>
+                <td>{{ skill.type }}</td>
+                <td>{{ skill.finished }}</td>
+                <td>{{ skill.title }}</td>
+                <!-- TODO: добавить нормалые fa icons -->
+                <td>
+                    <button class="btn btn-link"
+                            [routerLink]="['/admin', 'skill', skill.id, 'edit']">
+                    Open</button>
+                    <a href="#" class="btn remove" (click)="remove(skill)">x</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<ng-template #loading>
+    <p>Идёт загрузка....</p>
+</ng-template>

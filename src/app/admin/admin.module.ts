@@ -7,11 +7,13 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { AuthGuard } from 'src/app/auth.guard';
 import { CreateComponent } from './create/create.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { FilterPipe } from 'src/app/filter.pipe';
+import { SearchPipe } from 'src/app/search.pipe';
 
 
 
 @NgModule({
-  declarations: [AdminLayoutComponent, LoginPageComponent, CreateComponent, DashboardComponent],
+  declarations: [AdminLayoutComponent, LoginPageComponent, CreateComponent, DashboardComponent, FilterPipe, SearchPipe],
   imports: [
     CommonModule,
     FormsModule,
