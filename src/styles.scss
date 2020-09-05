@@ -61,6 +61,11 @@ body {
         display: inline-block;
         width: 100%;
         border: none;
+
+        option {
+            background-color: #414141;
+            color: white;
+        }
     }
 
     .select {
@@ -138,21 +143,14 @@ header.navbar {
     .skills {
         max-width: 100%;
         display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: baseline;
+        align-items: baseline;
+        justify-content: space-between;
         padding: 10px 20px;
         box-sizing: border-box;
     }
 
     .skill {
-        min-width: 45%;
-        padding: 10px;
-        border: 1px solid rgb(194, 194, 194);
-        box-shadow: 1px 1px 12px black;
         text-align: left;
-        margin-right: 25px;
-        margin-bottom: 25px;
 
         &:last-child {
             margin-right: 0;
@@ -182,6 +180,11 @@ header.navbar {
             font-size: 18px;
             text-transform: capitalize;
             margin: 0;
+            max-width: 70%;
+        }
+
+        span {
+            height: 100%;
         }
 
         .desc::before {

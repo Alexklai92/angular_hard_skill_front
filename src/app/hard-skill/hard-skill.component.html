@@ -29,11 +29,32 @@
     <h1>Road to middle</h1>
 
     <div class="wrapper">
-        <div *ngIf="skills$ | async as skills" class="skills">
-            <app-skill class="skill"
-                       *ngFor="let skill of skills | searchSkill: searchStr | filterSkill: isFinished"
+        <div class="skills">
+            <div *ngIf="sNotFinished.length" class="opened">
+                <span class="preview">Opened todo:</span>
+                <app-skill class="skill open"
+                       *ngFor="let skill of sNotFinished | searchSkill: searchStr | filterSkill: isFinished"
+                       [skill]="skill">
+                </app-skill>
+            </div>
+
+            <div *ngIf="sFinished.length" class="closed">
+                <span class="preview">Closed todo:</span>
+                <app-skill class="skill closed"
+                       *ngFor="let skill of sFinished | searchSkill: searchStr | filterSkill: isFinished"
+                       [skill]="skill">
+                </app-skill>
+            </div>
+        </div>
+        <!-- <div *ngIf="skills$ | async as skills" class="skills">
+            <app-skill class="skill open"
+                       *ngFor="let skill of skills | searchSkill: searchStr | filterSkill: 'no' | filterSkill: isFinished"
                        [skill]="skill">
             </app-skill>
-        </div>
+            <app-skill class="skill closed"
+                       *ngFor="let skill of skills | searchSkill: searchStr | filterSkill: 'yes' | filterSkill: isFinished"
+                       [skill]="skill">
+            </app-skill>
+        </div> -->
     </div>
 </div>

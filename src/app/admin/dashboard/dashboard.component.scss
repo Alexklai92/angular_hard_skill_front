@@ -32,3 +32,38 @@ td {
 .created {
     text-align: left;
 }
+
+.search {
+    margin-bottom: 10px;
+}
+
+input {
+    max-width: 70%;
+    border-bottom: 1px solid #414141;
+}
+
+select {
+    color: #414141;
+    background: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+
+    option {
+        background-color: #414141;
+        color: white;
+    }
+}
+
+.select {
+    display: flex;
+    align-items: center;
+}
+
+.select::after {
+    content: "▼";
+    color: #414141;
+    font-size: 12px;
+    display: block;
+}

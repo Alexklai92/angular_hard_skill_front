@@ -6,7 +6,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class FilterPipe implements PipeTransform {
 
   transform(skills, isFinished: string = 'all'): unknown {
-    console.log(isFinished)
     if (isFinished == 'all') return skills;
 
     if (isFinished == 'yes') {

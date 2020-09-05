@@ -1,12 +1,15 @@
 <div *ngIf="skills.length; else loading" class="container">
-    <div class="form-control">
+    <div class="search">
         <input type="text" placeholder="Найти скилл.." [(ngModel)]="searchStr">
-        <select name="" id="" [(ngModel)]="isFinished">
-            <option value="all">All todo</option>
-            <option value="no">Opened</option>
-            <option value="yes">Closed</option>
-        </select>
+        <div class="select">
+            <select name="" id="" [(ngModel)]="isFinished">
+                <option value="all">All todo</option>
+                <option value="no">Opened</option>
+                <option value="yes">Closed</option>
+            </select>
+        </div>
     </div>
+
     <table class="dashboard" cellspacing="0">
         <thead>
             <tr>

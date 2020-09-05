@@ -9,6 +9,7 @@ import { SkillComponent } from './skill/skill.component';
 import { FormsModule } from '@angular/forms';
 import { AdminModule } from './admin/admin.module';
 import { FormControlComponent } from './form-control/form-control.component';
+import { FilterByFinPipe } from './filter-by-fin.pipe';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { FormControlComponent } from './form-control/form-control.component';
     HardSkillComponent,
     SkillComponent,
     FormControlComponent,
+    FilterByFinPipe,
   ],
   imports: [
     BrowserModule,
