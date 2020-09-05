@@ -10,8 +10,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { FilterPipe } from 'src/app/filter.pipe';
 import { SearchPipe } from 'src/app/search.pipe';
 
-
-
 @NgModule({
   declarations: [
     AdminLayoutComponent,

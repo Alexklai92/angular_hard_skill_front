@@ -53,11 +53,30 @@ body {
     }
 
     & select {
-        
+        color: white;
+        background: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        display: inline-block;
+        width: 100%;
+        border: none;
+    }
+
+    .select {
+        display: flex;
+        align-items: center;
+    }
+
+    .select::after {
+        content: "▼";
+        color: white;
+        font-size: 12px;
+        display: block;
     }
 
     & input,
-    & select {
+    & .select {
         margin-right: 10px;
         border: none;
         padding: 8px;

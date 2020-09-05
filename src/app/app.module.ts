@@ -7,6 +7,8 @@ import { HardSkillComponent } from './hard-skill/hard-skill.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SkillComponent } from './skill/skill.component';
 import { FormsModule } from '@angular/forms';
+import { AdminModule } from './admin/admin.module';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AdminModule
   ],
   providers: [
     {
