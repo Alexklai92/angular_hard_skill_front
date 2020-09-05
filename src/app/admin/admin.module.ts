@@ -21,7 +21,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
         path: '', component: AdminLayoutComponent, children: [
           { path: '', redirectTo: 'login', pathMatch: 'full' },
           { path: 'login', component: LoginPageComponent },
-          { path: 'create', component: CreateComponent }
+          { path: 'create', component: CreateComponent, canActivate: [AuthGuard] },
+          { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] }
         ]
       }
     ])
