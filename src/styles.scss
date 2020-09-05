@@ -40,6 +40,30 @@ body {
     }
 }
 
+// search and filter
+.search {
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    & input {
+        width: 100%;
+        box-sizing: border-box;
+        display: block;
+    }
+
+    & select {
+        
+    }
+
+    & input,
+    & select {
+        margin-right: 10px;
+        border: none;
+        padding: 8px;
+    }
+}
+
 // header
 
 header.navbar {

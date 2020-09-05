@@ -13,6 +13,7 @@ export class HardSkillComponent implements OnInit {
   skills$
   searchStr: string = ''
   isFinished: string = 'all'
+  isSearching: boolean = false
 
   constructor(private skillService: SkillService) { }
 
