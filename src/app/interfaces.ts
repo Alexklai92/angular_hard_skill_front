@@ -10,3 +10,9 @@ export interface Skill {
     link_approve_second: string
     type: string
 }
+
+export interface NewSkill {
+    title: string
+    author: string
+    type: string
+}
