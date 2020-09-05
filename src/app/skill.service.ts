@@ -34,8 +34,8 @@ export class SkillService {
       }))
   }
 
-  remove(skill): Observable<void> {
-    return this.http.delete<void>(`${environment.apiUrl}/delete`, skill)
+  remove(skill_id): Observable<void> {
+    return this.http.delete<void>(`${environment.apiUrl}/delete/${skill_id}`)
       .pipe(map(res => {
         console.log('delete res', res)
       }))

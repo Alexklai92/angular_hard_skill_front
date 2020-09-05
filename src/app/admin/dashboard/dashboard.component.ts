@@ -25,9 +25,9 @@ export class DashboardComponent implements OnInit {
     })
   }
 
-  remove(sSkill: Skill) {
-    this.destrSub = this.skillServ.remove(sSkill).subscribe(() => {
-      this.skills = this.skills.filter(skill => skill.id !== sSkill.id)
+  remove(id: number) {
+    this.destrSub = this.skillServ.remove(id).subscribe(() => {
+      this.skills = this.skills.filter(skill => skill.id != id)
     })
   }
 

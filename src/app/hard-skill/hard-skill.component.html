@@ -11,8 +11,11 @@
 
     <div class="wrapper">
         <div *ngIf="skills$ | async as skills" class="skills">
-            <app-skill class="skill"
+            <!-- <app-skill class="skill"
                        *ngFor="let skill of skills | searchSkill: searchStr | filterSkill: isFinished"
+                       [skill]="skill"></app-skill> -->
+            <app-skill class="skill"
+                       *ngFor="let skill of skills"
                        [skill]="skill"></app-skill>
         </div>
     </div>

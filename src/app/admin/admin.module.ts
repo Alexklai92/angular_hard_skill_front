@@ -13,7 +13,14 @@ import { SearchPipe } from 'src/app/search.pipe';
 
 
 @NgModule({
-  declarations: [AdminLayoutComponent, LoginPageComponent, CreateComponent, DashboardComponent, FilterPipe, SearchPipe],
+  declarations: [
+    AdminLayoutComponent,
+    LoginPageComponent,
+    CreateComponent,
+    DashboardComponent,
+    FilterPipe,
+    SearchPipe
+  ],
   imports: [
     CommonModule,
     FormsModule,
@@ -29,6 +36,6 @@ import { SearchPipe } from 'src/app/search.pipe';
       }
     ])
   ],
-  exports: [RouterModule]
+  exports: [RouterModule, FilterPipe, SearchPipe]
 })
 export class AdminModule { }

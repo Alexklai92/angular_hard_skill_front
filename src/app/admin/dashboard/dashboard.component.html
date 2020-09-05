@@ -30,7 +30,7 @@
                     <button class="btn btn-link"
                             [routerLink]="['/admin', 'skill', skill.id, 'edit']">
                     Open</button>
-                    <a href="#" class="btn remove" (click)="remove(skill)">x</a>
+                    <a class="btn remove" (click)="remove(skill.id)">x</a>
                 </td>
             </tr>
         </tbody>
