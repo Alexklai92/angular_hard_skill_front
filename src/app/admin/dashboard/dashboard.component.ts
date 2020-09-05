@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Skill } from 'src/app/interfaces';
 import { Subscription } from 'rxjs';
 import { SkillService } from 'src/app/skill.service';
@@ -8,7 +8,7 @@ import { SkillService } from 'src/app/skill.service';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent implements OnInit, OnDestroy {
 
   skills: Skill[] = []
   skillSub: Subscription
@@ -31,10 +31,12 @@ export class DashboardComponent implements OnInit {
     })
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     if (this.skillSub) {
+      console.log('skillSub destroy')
       this.skillSub.unsubscribe()
     } else if (this.destrSub) {
+      console.log('destrSub destroy')
       this.destrSub.unsubscribe()
     }
   }

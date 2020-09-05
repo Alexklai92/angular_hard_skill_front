@@ -1,5 +1,7 @@
 <div *ngIf="form; else loading" class="container align-left">
-    <form [formGroup]="form" (ngSubmit)="submit()" class="edit-skill">
+    <form [formGroup]="form"
+          (ngSubmit)="submit()"
+          class="edit-skill">
 
         <div class="form-control"
             [ngClass]="{invalid: form.get('title').touched && form.get('title').invalid}"

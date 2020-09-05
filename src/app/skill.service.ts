@@ -41,8 +41,9 @@ export class SkillService {
       }))
   }
 
-  update(skill: Skill): Observable<Skill> {
-    return this.http.patch<Skill>(`${environment.apiUrl}/patch`, skill)
+  update(skill) {
+    console.log(`${environment.apiUrl}/patch`)
+    return this.http.patch(`${environment.apiUrl}/patch`, skill)
   }
 
   getById(skill_id: number): Observable<Skill> {

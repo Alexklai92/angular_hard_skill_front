@@ -44,8 +44,9 @@ export class EditComponent implements OnInit, OnDestroy {
   }
 
   submit() {
-    if (this.form.invalid) return;
-
+    if (this.form.invalid) {
+      return;
+    }
     this.submitted = true
 
     this.sSub = this.skillServ.update({
@@ -58,10 +59,11 @@ export class EditComponent implements OnInit, OnDestroy {
       link_approve_second: this.form.value.link_approve_second,
       type: this.form.value.type
     }).subscribe(() => {
-      this.submitted = false
+      this.submitted = true
     })
 
-    return this.router.navigate(['/admin', 'dashboard'])
+    // Без таймаута не отправлялся запрос...
+    setTimeout(() => { return this.router.navigate(['/admin', 'dashboard']) }, 500)
   }
 
   ngOnDestroy(): void {
