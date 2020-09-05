@@ -6,11 +6,12 @@ import { AdminLayoutComponent } from './admin-layout/admin-layout.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { AuthGuard } from 'src/app/auth.guard';
 import { CreateComponent } from './create/create.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 
 @NgModule({
-  declarations: [AdminLayoutComponent, LoginPageComponent, CreateComponent],
+  declarations: [AdminLayoutComponent, LoginPageComponent, CreateComponent, DashboardComponent],
   imports: [
     CommonModule,
     FormsModule,
