@@ -1,6 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 
 // Base styles
+body {
+    margin: 0;
+}
+
 .btn {
     border: none;
     padding: 8px;
@@ -33,6 +37,50 @@
 
     &:hover {
         opacity: 1;
+    }
+}
+
+// header
+
+header.navbar {
+    width: 100%;
+    background-color: #414141;
+    margin-bottom: 25px;
+
+    nav {
+        display: flex;
+        align-items: center;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: space-between;
+
+        &.right {
+            flex-direction: row-reverse;
+        }
+
+        a.nav-item {
+            box-sizing: border-box;
+            display: block;
+            padding: 15px 10px;
+            color: white;
+            text-decoration: none;
+            opacity: .9;
+            margin-left: 10px;
+
+            &:hover {
+                border-top: 2px solid #414141;
+                border-bottom: 2px solid #414141;
+                padding: 13px 10px;
+                opacity: 1;
+                background-color: #ffffff;
+                color: #414141;
+            }
+        }
+
+        .right-block {
+            display: flex;
+        }
     }
 }
 

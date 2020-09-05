@@ -1,13 +1,22 @@
 .dashboard {
     width: 100%;
+    color: #414141;
 }
 
 .btn.btn-link {
     margin-right: 10px;
 }
 
+thead td {
+    font-weight: 600;
+    padding-right: 25px;
+}
+
 td {
-    width: 15%;
+    width: 20%;
+    border-bottom: 1px solid #acacac;
+    margin-bottom: 5px;
+    padding: 8px;
 
     &:first-child {
         width: 5%;
@@ -15,6 +24,7 @@ td {
 
     &:last-child {
         width: 25%;
+        text-align: right;
     }
 }
 

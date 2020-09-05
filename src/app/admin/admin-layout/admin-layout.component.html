@@ -1,1 +1,12 @@
+<header class="navbar">
+    <nav>
+        <a class="nav-item" [routerLink]="['/']">Home</a>
+        <div class="right-block">
+            <a class="nav-item" [routerLink]="['/admin', 'dashboard']">Dashboard</a>
+            <a class="nav-item" [routerLink]="['/admin', 'create']">Create</a>
+            <!-- <a class="nav-item"></a>
+            <a class="nav-item"></a> -->
+        </div>
+    </nav>
+</header>
 <router-outlet></router-outlet>
