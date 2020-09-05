@@ -39,4 +39,8 @@ export class DashboardComponent implements OnInit {
     }
   }
 
+  getCreated(timestamp: number) {
+    return new Date(timestamp * 1000)
+  }
+
 }

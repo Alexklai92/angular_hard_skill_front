@@ -1,3 +1,24 @@
 .dashboard {
     width: 100%;
 }
+
+.btn.btn-link {
+    margin-right: 10px;
+}
+
+td {
+    width: 15%;
+
+    &:first-child {
+        width: 5%;
+    }
+
+    &:last-child {
+        width: 25%;
+    }
+}
+
+.title,
+.created {
+    text-align: left;
+}

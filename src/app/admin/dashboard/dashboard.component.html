@@ -11,25 +11,25 @@
         <thead>
             <tr>
                 <td>#</td>
-                <td>Created</td>
+                <td class="created">Created</td>
                 <td>Type</td>
                 <td>Status</td>
-                <td>title</td>
+                <td class="title">title</td>
                 <td>Action</td>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let skill of skills | searchSkill: searchStr | filterSkill: isFinished; let idx = index">
                 <td>{{ idx + 1 }}</td>
-                <td>{{ skill.created }}</td>
+                <td class="created">{{ getCreated(skill.created) | date:' hh:mm:ss MM-dd-yyyy' }}</td>
                 <td>{{ skill.type }}</td>
                 <td>{{ skill.finished }}</td>
-                <td>{{ skill.title }}</td>
+                <td class="title">{{ skill.title }}</td>
                 <!-- TODO: добавить нормалые fa icons -->
                 <td>
                     <button class="btn btn-link"
                             [routerLink]="['/admin', 'skill', skill.id, 'edit']">
-                    Open</button>
+                    Edit</button>
                     <a class="btn remove" (click)="remove(skill.id)">x</a>
                 </td>
             </tr>
