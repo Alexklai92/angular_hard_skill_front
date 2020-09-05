@@ -7,7 +7,7 @@
 <div class="desc" *ngIf="allDesc" (click)="allDesc = !allDesc">{{ getDescription(skill.description, true) }}</div>
 <div class="approves">
     <div class="link" *ngIf="skill.link_approve_first"><a href="{{ skill.link_approve_first }}">{{ getLink(skill.link_approve_first) }}</a></div>
-    <div class="link" *ngIf="skill.link_approve_second"><a href="{{ skill.link_approve_second }}">{{ skill.link_approve_first }}</a></div>
+    <div class="link" *ngIf="skill.link_approve_second"><a href="{{ skill.link_approve_second }}">{{ getLink(skill.link_approve_first) }}</a></div>
     <div class="link read-only" *ngIf="!skill.link_approve_first">None</div>
     <div class="link read-only" *ngIf="!skill.link_approve_second">None</div>
    
@@ -19,3 +19,19 @@
 </div>
 </div>
 <div class="created">{{ getCreated(skill.created) | date:' hh:mm:ss MM-dd-yyyy' }}</div>
+
+<div *ngIf="allDesc"
+     class="modal"
+     style="position: absolute;top:0;left:0;background-color:rgba(0,0,0, .7);width:100vw;height: 100vh;z-index: 1050;"
+     (click)="allDesc = !allDesc">
+     <div class="modal-table"
+          style="position: absolute;top: 35%;background-color: white;
+                 left: 35%;border-radius: 5px;z-index: 1060;width: 320px;opacity: 1;
+                 z-index: 1060;padding:10px; color:#414141;">
+          <div class="header"
+               style="margin-bottom: 10px; font-weight: 600;">
+               {{ skill.title }}</div>
+          <div class="body">{{ skill.description }}</div>
+     </div>
+
+</div>
