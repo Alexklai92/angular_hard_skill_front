@@ -67,3 +67,9 @@ select {
     font-size: 12px;
     display: block;
 }
+
+@media screen and (max-width:600px) {
+    .not-matter {
+        display: none;
+    }
+}

@@ -14,8 +14,8 @@
         <thead>
             <tr>
                 <td>#</td>
-                <td class="created">Created</td>
-                <td>Type</td>
+                <td class="created not-matter">Created</td>
+                <td class="not-matter">Type</td>
                 <td>Status</td>
                 <td class="title">title</td>
                 <td>Action</td>
@@ -24,8 +24,8 @@
         <tbody>
             <tr *ngFor="let skill of skills | searchSkill: searchStr | filterSkill: isFinished; let idx = index">
                 <td>{{ idx + 1 }}</td>
-                <td class="created">{{ getCreated(skill.created) | date:' hh:mm:ss MM-dd-yyyy' }}</td>
-                <td>{{ skill.type }}</td>
+                <td class="not-matter">{{ getCreated(skill.created) | date:' MM-dd-yyyy' }}</td>
+                <td class="not-matter">{{ skill.type }}</td>
                 <td>{{ skill.finished }}</td>
                 <td class="title">{{ skill.title }}</td>
                 <!-- TODO: добавить нормалые fa icons -->
