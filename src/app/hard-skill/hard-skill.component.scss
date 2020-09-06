@@ -40,3 +40,51 @@ i:hover {
     width: 35%;
     box-sizing: border-box;
 }
+
+footer {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    background-color: #414141;
+    font-weight: 600;
+    color: white;
+
+    .container {
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 20px 10px 20px;
+    }
+    
+    span {
+        display: inline-block;
+    }
+
+    i {
+        color: white;
+        text-align: left;
+        display: inline-block;
+        margin-left:10px;
+        font-size: 20px;
+
+        &:hover {
+            color: rgb(167, 167, 167);
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    footer {
+        position: relative;
+    }
+
+    .skills {
+        flex-direction: column;
+    }
+
+    .opened, .closed {
+        width: 90%;
+    }
+}
